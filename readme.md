@@ -1,20 +1,35 @@
 
 
-# What is Software Architecture
+# What is Software Architecture
+
+# Identifying Architecture Characteristics
+
+Tanto el desarrollador como el arquitecto están pendientes de la funcionalidad de una aplicación. Sin embargo, el arquitecto tiene responsabilidades adicionales, las cuales son las otras características arquitecturales de la aplicación:
+* reliability
+* scalability
+* functionality
+* performance
+* availability
+
+Los atributos de calidad no vienen de requerimientos, historias de usuario, etc. sino vienen del negocio. **Es un proceso de escuchar y traducir a requerimientos no funcionales**.
+
+¿Cómo se relaciona la identificación de los atributos de calidad con los patrones arquitecturales?
+Hay cierto patrones que promueven niveles altos de testability, deployability, performance y scalability. Por lo tanto, elegir el patrón equivocado no nos permitirá lograr los objetivos.
+
+Entre los diferentes patrones tenemos:
+* monolithic architectures
+    * layered architecture
+    * micro-kernel architecture
+    * pipeline architecture
+* distributed architectures
+    * event-driven architecture
+    * space-based architecture
+    * microservices architecture
+    * service-oriented architecture
+    * service-base architecture
 
 
 
-monolithic architectures
-* layered architecture
-* micro-kernel architecture
-* pipeline architecture
-
-distributed architectures
-* event-driven architecture
-* space-based architecture
-* microservices architecture
-* service-oriented architecture
-* service-base architecture
 
 
 
@@ -93,7 +108,7 @@ Los Services templates son los ideales para compartir código en cada servicio
 
 * ?
 
-### API Layer
+### API Layer
 
 * Fachada que expones endpoints al exterior
 * endpoint proxy
@@ -112,7 +127,7 @@ Los Services templates son los ideales para compartir código en cada servicio
     * muleESB
     * 
 
-### Event driven
+### Event driven
 
 * lo común es la comunicación asíncrona
 * hacer rollbacks distribuidos es muy difícil
