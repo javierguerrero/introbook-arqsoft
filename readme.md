@@ -2,6 +2,69 @@
 
 # What is Software Architecture
 
+La arquitectura de software implica:
+* Estructura
+    * Patrones de arquitectura
+    * Abarca las "ilities"
+* Decisiones de arquitectura
+    * only the business and services layers can access the persistence layer
+    * all shared objects use by business objects in the business layer should reside in the shared service layer
+* Principios de diseño
+    * inter-service communications should leverage async messaging whenever possible to increse performance
+
+# Understanding the expectations of an architect
+
+Dentro del rol del arquitecto de software, lo que se espera que un arquitecto haga es:
+
+1. Definir la arquitectura y los los principios de diseño para guiar las decisiones tecnológicas para la empresa.
+2. Definir la viabilidad de una arquitectura a corto, mediano y largo plazo
+3. Analyze technology and industry trends and keep current with the latest trends
+4. Asegurar el cumplimiento de la arquitectura
+5. Have exposure to multiple and diverse technologies, platforms and environments
+6. Have a certain level of business domain expertise. Usa el lenguaje que usa el negocio
+7. Possess exceptional interpersonal skills, including teamwork, facilitation and negotiation
+8. Understand the political climate of the enterprise and be able to navigate the politics
+
+# Thinking like an architect
+
+Si pensamos en todo el conocimiento del universo, lo podemos dividir en tres grandes bloques:
+
+* cosas que conoces
+* cosas que sabes que no conoces
+* cosas que no sabes que no conoces
+
+Como arquitecto, tu foco está en las "cosas que sabes que no conoces"
+
+La forma de convertirse en arquitcto es mostrando expertise en una variedad de diversas áreas técnicas.
+
+![](img/stuff-you-know.png)
+
+## ¿Cuál es la línea divisioria entre diseño y arquitectura?
+
+En realidad, no existe. 
+
+El arquitecto:
+
+* Identificar las caraterísticas arquitecturales (ilities)
+* Identificar los patrones de arquitectura más adecuados para la aplicación (microservices, micro-kernel,...)
+* Identificar los bloques principales de la arquitectura
+
+El desarrollador:
+* Diseñar los componentes que el arquitecto identificó
+* Diseñar la experiencia de usuario
+* Codificar
+
+Tiene que haber una comunicación bidireccional entre arquitectos y desarrolladores.
+
+Para que un arquitecto esté involucrado con el código fuente debe:
+* Hacer experimentos (spikes)
+* Hacer Pair Programming
+* Code reviews
+
+> El pair programming sería una buena práctica para mejorar la calidad del código y para formar a nuevos miembros del equipo.
+
+
+
 # Identifying Architecture Characteristics
 
 Tanto el desarrollador como el arquitecto están pendientes de la funcionalidad de una aplicación. Sin embargo, el arquitecto tiene responsabilidades adicionales, las cuales son las otras características arquitecturales de la aplicación:
