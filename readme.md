@@ -227,14 +227,14 @@ Los componentes de un arquitectura microservicios incluyen la base de datos
         * fire-and-forget version
         * 
 
-
-
-
 ## Links
 * https://learning.oreilly.com/library/view/microservices-vs-service-oriented/9781491975657/ch04.html
 
 
 
+<hr />
+
+# MODULE II: FOUNDATIONS
 
 ## Chapter 2. Architectural Thinking
 
@@ -253,3 +253,57 @@ A diferencia de un developer, un arquitecto debe desarrollar un "pensamiento arq
 * ¿Cuál es la línea que divide la arquitecta y el diseño? No existe. Ambos están integrados y deben mantenerse sincronizados 
 
 ![](img/arquitectura-vs-diseno.png)
+
+### Amplitud técnica
+Mienras que un desarrollador debe tener una profundidad técnica para realizar su trabajo, un arquitecto debe tener una amplitud técnica para pensar desde un punto de vista de la arquitectura.
+
+Cualquier individuo puede dividir todos sus conocimientos en tres secciones: cosas que sabe, cosas que sabe que no sabe y cosas que no sabe que no sabe.
+
+![](img/piramide-conocimiento.png)
+
+Sin embargo, la naturaleza del conocimiento cambia a medida que los desarrolladores hacen la transición al papel de arquitecto. Una gran parte del valor de un arquitecto es una amplia comprensión de la tecnología y de cómo utilizarla para resolver problemas concretos. Por ejemplo, como arquitecto, es más beneficioso saber que existen cinco soluciones para un problema particular que tener conocimientos singulares en una sola.
+
+![](img/amplitud-profundidad-tecnica.png)
+
+Equilibrar su cartera de conocimientos en cuanto a profundidad y amplitud es algo que todo desarrollador debería considerar a lo largo de su carrera.
+
+
+### Analyzing Trade-Offs
+
+Pensar como arquitecto implica en evaluar los trade-offs de cada alternativa para elegir la mejor solución.
+
+```
+La arquitectura es lo que no puedes buscar en Google
+```
+
+Todo en la arquitectura es un trade-off, por lo que la famosa respuesta a cada pregunta de arquitectura es "depende". No se puede buscar en Google si los microservicios es el estilo de arquitectura correcto, porque depende del entorno de implementación, de los drivers de negocio, de la cultura de la empresa, del presupuesto, de los plazos, del conjunto de habilidades del desarrollador y muchos otros factores más.
+
+El entorno, la situación y el problema de cda uno es diferente, de ahí que la arquitectura sea tan difícil.
+
+```
+Los programadores conocen los beneficios de todo y los trade-offs de nada. Los arquitectos necesitan entender ambas cosas.
+```
+
+Pensar arquitectónicamente implica observar los beneficios de una solución dada, pero también analizar los aspectos negativos.
+
+Todo en la arquitectura tiene un trade-off: una ventaja y una desventaja. Pensar como arquitecto es pensar en estos trade-off y luego preguntarse "¿Qué es más importante: la extensibilidad o la seguridad?". La decisión entre las diferentes soluciones siempre dependerá de los drivers de negocio, el entorno y otra serie de factores más.
+
+### Understanding Business Drivers
+
+Pensar como arquitecto requiere entender los requerimientos de negocio para luego traducirlos en características de la arquitectura (escalabilidad, rendimiento, disponibilidad, etc.). Es una tarea compleja porque requiere conocimiento del negocio y buenas relaciones con los principales stakeholders de la empresa.
+
+### Balancing Architecture and Hands-On Coding
+
+Todo arquitecto debe codificar y tener un cierto nivel de profundidad técnica. Algunas formas de que un arquitecto practique la codificación son:
+* Hacer pruebas de concepto (POCs): Esto permite validar una decisión de arquitectura teniendo en cuenta los detalles de la implementación.
+* Abordar los casos de deuda técnica o de arquitectura.
+* Automatizar tareas repetitivas. El equipo de desarrollo agradecerá la automatización.
+* Hacer code reviews frecuentemente.
+
+
+<hr />
+
+# MODULE III: ARCHITECTURE STYLES
+
+## Chapter 9. Foundations
+
