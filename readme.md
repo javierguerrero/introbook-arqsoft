@@ -232,3 +232,24 @@ Los componentes de un arquitectura microservicios incluyen la base de datos
 
 ## Links
 * https://learning.oreilly.com/library/view/microservices-vs-service-oriented/9781491975657/ch04.html
+
+
+
+
+## Chapter 2. Architectural Thinking
+
+A diferencia de un developer, un arquitecto debe desarrollar un "pensamiento arquitectónico". El pensamiento arquitectónico implica:
+* Entender la diferencia entre arquitectura y diseño
+* Tener una amplia gama de conocimientos técnicos y al mismo tiempo mantener un cierto nivel de profundidad técnica
+* Entender, analizar y reconciliar trade-offs entre varias soluciones y tecnologías
+* Entender los requisitos de negocio y traducirlos a características arquitectónicas
+
+### Arquitectura vs Diseño
+
+* La visión tradicional de arquitectura y diseño es la siguiente:
+![](img/responsabilidades-arq-dev.png)
+* Entender la diferencia entre arquitectura y diseño y ver cómo ambos se integran
+* Para que la arquitectura funcione, los arquitectos y desarrolladores deben trabajar juntos (estar en el mismo equipo). El arquitecto debe proporcionar tutoría y entrenamiento a los desarrolladores del equipo.
+* ¿Cuál es la línea que divide la arquitecta y el diseño? No existe. Ambos están integrados y deben mantenerse sincronizados 
+
+![](img/arquitectura-vs-diseno.png)
