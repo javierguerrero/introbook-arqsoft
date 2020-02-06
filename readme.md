@@ -1,5 +1,11 @@
+# Table of contents
+1. [MODULE I](#ModuleI)
+2. [MODULE II: FOUNDATIONS](#ModuleII)
+    1. [Sub paragraph](#subparagraph1)
 
-# MODULE I
+
+
+# MODULE I <a name="ModuleI"></a>
 
 ## 1. Introduction
 
@@ -13,7 +19,7 @@
 
 <hr />
 
-# MODULE II: FOUNDATIONS
+# MODULE II: FOUNDATIONS <a name="ModuleII"></a>
 
 Para comprender los importantes trade-offs en la arquitectura, los desarrolladores deben entender algunos conceptos y terminología básicos relativos a los componentes, la modularidad, el acoplamiento y la connascence.
 
