@@ -307,3 +307,68 @@ Todo arquitecto debe codificar y tener un cierto nivel de profundidad técnica. 
 
 ## Chapter 9. Foundations
 
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch09.html#ch-architecture-styles
+
+Los estilos arquitectónicos (algunas veces llamados patrones de arquitectura) describen una relación nombrada de componentes que cubren una variedad de características de la arquitectura.
+
+Los arquitectos deben estar familiarizados con los nombres básicos de los estilos arquitectónicos genéricos fundamentales.
+
+### Fundamental Patterns
+
+#### Big Ball of Mud
+
+Se refiere a la ausencia de cualquier estructura arquitectónica.
+
+![](img/big-ball-mud.png)
+
+#### Unitary Architecture
+
+La arquitectura unitaria se refiere a un sistema específico que funciona en un hardware específico. 
+
+Investigar: "embedded systems"
+https://www.guru99.com/embedded-systems-tutorial.html
+
+
+#### Client/Server
+
+Con el tiempo, cuando las redes de computadoras se hicieron común, surgió la necesidad de separar en partes un sistema (sistema distribuido).
+
+La arquitectura Cliente/Servidor consiste en separar la funcionalidad técnica entre el frontend y backend. A este estilo arquitectónico también se lo conocomo como **two-tier**.
+
+Algunos sabores de estilo arquitectónico son:
+* DESKTOP + DATABASE SERVER
+* BROWSER + WEB SERVER
+* THREE-TIER
+
+### Monolithic Versus Distributed Architectures
+
+Los estilos de arquitectura pueden clasificarse en dos tipos principales: monolíticos (una sola unidad de despliegue de todo el código) y distribuidos (múltiples unidades de despliegue conectadas a través de protocolos de acceso remoto.
+
+Monolithic
+* Layered architecture
+* Pipeline architecture
+* Microkernel architecture
+
+Distributed
+* Service-based architecture
+* Event-driven architecture
+* Space-based architecture
+* Service-oriented architecture
+* Microservices architecture
+
+Los estilos de arquitectura distribuida, aunque son mucho más poderosos en términos de rendimiento, escalabilidad y disponibilidad que los estilos de arquitectura monolítica, tienen importantes trade-offs por este poder.
+
+El primer grupo de problemas a los que se enfrentan todas las arquitecturas distribuidas se describen en las "falacias de la informática distribuida"
+* Falacia #1: La red es confiable
+* Falacia #2: La latencia es cero
+* Falacia #3: El ancho de banda es infinito
+* Falacia #4: La red es segura
+* Falacia #5: La topología nunca cambia
+* Falacia #7: El costo de transporte es cero
+* Falacia #8: La red es homogénea
+
+Otras consideraciones distribuidas
+* DISTRIBUTED LOGGING
+* DISTRIBUTED TRANSACTIONS
+* CONTRACT MAINTENANCE AND VERSIONING
+
