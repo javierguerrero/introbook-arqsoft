@@ -93,13 +93,103 @@ Todo arquitecto debe codificar y tener un cierto nivel de profundidad técnica. 
 
 URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch03.html#ch-modularity
 
+Algunas ideas generales:
+* La modularidad es un principio organizador. 
+* Muchas de las herramientas para analizar la arquitectura (metrics, fitness functions y visualizations) se basan en el concepto de modularidad.
+* Si un arquitecto diseña un sistema sin prestar atención a cómo se conectan las piezas, terminan creando un sistema que presenta innumerables dificultades.
+* Para usar una analogía física, los sistema de software modelan sistemas complejos que tienden a la entropía (desorden). La energía debes ser añadida a un sistema físico para preservar el orden. Lo mismo ocurre con los sistemas de software: los arquitectos deben gastar constantemente energía para asegurar una buena solidez estructural, lo que no ocurriría por accidente.
+
 ### Definition
+
+Utilizamos la modularidad para describir una *agrupación lógica de código relacionado*, que podría ser un grupo de clases en un lenguaje OO o funciones en un lenguaje estructura o funcional.
+
+La mayoría de lenguajes proporcionan mecanismos de modularidad:
+* Paquete en Java
+* Espacio de nombres en .NET
+* ...
+
+Los desarrolladores típicamente usan módulos como una forma de agrupar código relacionado. Por ejemplo, el paquete com.mycompany.customer en Java debería contener cosas relacionadas con los clientes.
+
+Para las discusiones sobre arquitectura, usamos la modularidad como un término general para denotar una agrupación de código relacionado: clases, funciones, o cualquier otra agrupación. **Esto no implica una separación física, sino simplemente lógica**; la diferencia es a veces importante. 
 
 ### Measuring Modularity
 
+Dada la importancia de la modularidad para los arquitectos, necesitan herramientas para entenderla. Afortunadamente, los investigadores crearon una variedad de métricas agnósticas del lenguaje para ayudar a los arquitectos a entender la modularidad. Nos centramos en tres conceptos clave: 
+* Cohesión
+* Acoplamiento
+* Connascence
+
+#### Cohesión
+
+Es una medida de cuán relacionadas están las partes entre sí. Idealmente, un **módulo cohesivo** es aquel en el que todas las partes deben estar empaquetadas juntas, porque para romperlas en piezas más pequeñas sería necesario acoplar las partes entre sí mediante llamadas entre módulos para lograr resultados útiles.
+
+```
+El intento de dividir un módulo cohesivo sólo daría como resultado un mayor acoplamiento y una menor legibilidad.
+Larry Constantine
+```
+
+Los científicos de la computación han definido una gama de medidas de cohesión, enumeradas aquí de mejor a peor:
+* Functional cohesion
+* Sequential cohesion
+* Communicational cohesion
+* Procedural cohesion
+* Temporal cohesion
+* Logical cohesion
+* Coincidental cohesion
+
+A pesar de tener siete variantes enumeradas, la cohesión es una métrica menos precisa que el acoplamiento. A menudo, el grado de cohesión de un módulo concreto queda a discreción de un arquitecto particular. 
+
+Sorprendentemente, dada la subjetividad de la cohesión, los informáticos han desarrollado una buena métrica estructural para determinar la cohesión (o, más concretamente, la falta de cohesión). Un conjunto de métricas muy conocido, denominado conjunto de métricas orientadas a objetos de Chidamber y Kemerer, fue desarrollado por los autores homónimos para medir aspectos particulares de los sistemas de software orientados a objetos. 
+
+La métrica **Chidamber and Kemerer Lack of Cohesion in Methods (LCOM)** mide la cohesión estructural de un módulo, típicamente un componente.
+
+
+#### Acoplamiento
+
+En 1979, Edward Yourdon y Larry Constantine publicaron *Structured Design: Fundamentals of a Discipline of Computer Program and Systems Design (Prentice-Hall)*, definiendo muchos conceptos centrales, incluyendo las métricas de acoplamiento aferente y eferente.
+
+El acoplamiento aferente mide el número de conexiones entrantes a un artefacto de código (componente, clase, función, etc.). El acoplamiento eferente mide las conexiones salientes con otros artefactos de código. 
+
+El libro anteriormente mencionado es anterior a la popularidad de los lenguajes orientados a objetos, centrándose en cambio en las construcciones de programación estructurada, como las funciones (no los métodos). También definió otros tipos de acoplamiento que no cubrimos aquí porque han sido suplantados por la conascencia.
+
+¿Para qué sirve entender el acoplamiento?  Para ayudar a reestructurar, migrar o comprender una base de código.
+
+#### Connascence
+
+En 1996, Meilir Page-Jones publicó *What Every Programmer Should Know About Object-Oriented Design (Dorset House)* donde refinó las métricas de acoplamiento aferente y eferente reformulándolas para los lenguajes OO con un concepto que denominó **Connascence**. 
+
+Dos componentes son **connascents** cuando deben cambiar de manera conjunta para que el sistema siga siendo válido: Si A cambia, entonces B debe cambiar.
+
+TIPOS DE CONNASCENCE
+* Static Connascence: acoplamiento a nivel de código fuente.
+    * Connascence of Name (CoN)
+    * Connascence of Type (CoT)
+    * Connascence of Meaning (CoM) or Connascence of Convention (CoC)
+    * Connascence of Position (CoP)
+    * Connascence of Algorithm (CoA)
+* Dynamic Connascence: Acoplamiento en tiempo de ejecución.
+    * Connascence of Execution (CoE)
+    * Connascence of Timing (CoT)
+    * Connascence of Values (CoV)
+    * Connascence of Identity (CoI)
+
+CONNASCENCE PROPERTIES
+
+Connascence es una herramienta de análisis para el arquitecto y los desarrolladores, y algunas propiedades de connascence ayudan a los desarrolladores a usarla sabiamente. La siguiente es una descripción de cada una de estas connascence properties:
+* Strength
+* Locality
+* Degree
+
+#### Unificando las métricas de acoplamiento y de Connascence
+
+Hasta ahora, hemos discutido tanto el acoplamiento como la connascence, medidas de diferentes épocas y con diferentes objetivos. Sin embargo, desde el punto de vista de un arquitecto, estos dos puntos de vista se superponen. 
+
+![](img/coupling-connascence.png)
+
+
 ### From Modules to Components
 
-Los módulos son una colección de código relacionado. Sin embargo, los arquitectos suelen pensar en términos de componentes, la manifestación física de un módulo.
+Los módulos son una colección de código relacionado. Sin embargo, **los arquitectos suelen pensar en términos de componentes, la manifestación física de un módulo**.
 
 ## Chapter 8. Component-Based Thinking
 
