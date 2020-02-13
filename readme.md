@@ -1,7 +1,5 @@
 # Table of contents
-1. [MODULE I](#ModuleI)
-2. [MODULE II: FOUNDATIONS](#ModuleII)
-    1. [Sub paragraph](#subparagraph1)
+TO-DO
 
 
 
@@ -190,6 +188,65 @@ Hasta ahora, hemos discutido tanto el acoplamiento como la connascence, medidas 
 ### From Modules to Components
 
 Los módulos son una colección de código relacionado. Sin embargo, **los arquitectos suelen pensar en términos de componentes, la manifestación física de un módulo**.
+
+## Chapter 4. Architecture Characteristics Defined
+
+Además de los requisitos funcionales necesarios para desarrollar un sistema de software el arquitecto debe considerar otros factores para diseñar una solución de software. Una solución de software consiste de requerimientos funcionales y características arquitectónicas.
+
+![](img/architecture-characteristics.png)
+
+El arquitecto tiene la esponsabilidad clave de definir, descubrir y analizar de otro modo todas las cosas que el software debe hacer y que no están directamente relacionadas con la funcionalidad del dominio: las **características arquitectónicas**, las cuales describen los aspectos críticos para el éxito de la arquitectura, y por lo tanto del sistema en su conjunto.
+
+Otros términos para referirse a las caractísticas arquitectónicas del software:
+* Requerimientos no funcioanles
+* Atributos de calidad
+
+### Architectural Characteristics (Partially) Listed
+
+Las característias de la arquitectura se pueden clasificar en las siguientes categorías:
+
+* Operational Architecture Characteristics
+    * Availability
+    * Continuity
+    * Performance
+    * Recoverability
+    * Reliability/safety
+    * Robustness
+    * Scalability
+* Structural Architecture Characteristics: Relacionado a la estructura del código
+    * Configurability
+    * Extensibility
+    * Installability
+    * Leverageability/reuse
+    * Localization
+    * Maintainability
+    * Portability
+    * Supportability
+    * Upgradeability
+* Cross-Cutting Architecture Characteristics
+    * Accessibility
+    * Archivability
+    * Authentication
+    * Authorization
+    * Legal
+    * Privacy
+    * Security
+    * Supportability
+    * Usability/achievability
+
+![](img/development-operations-teams.jpeg)
+
+
+### Trade-Offs and Least Worst Architecture
+
+Las aplicaciones sólo pueden soportar algunas de las características de la arquitectura que hemos enumerado por una variedad de razones. 
+* Cada una de las características soportadas requiere un esfuerzo de diseño
+* El mayor problema radica en el hecho de que cada característica de la arquitectura a menudo tiene un impacto en otras.
+
+```
+Tip:
+Nunca se busca la mejor arquitectura, sino la menos mala.
+```
 
 ## Chapter 8. Component-Based Thinking
 
