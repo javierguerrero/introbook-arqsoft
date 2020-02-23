@@ -248,6 +248,49 @@ Tip:
 Nunca se busca la mejor arquitectura, sino la menos mala.
 ```
 
+## Chapter 5. Identifying Architectural Characteristics
+
+```
+Identificar las características arquitectónicas es el primer paso para crear una arquitectura o determinar la validez de una arquitetura existente.
+```
+
+Para identificar las características arquitectónicas correctas para un determinado problema o aplicación el arquitecto debe:
+* Comprender el dominio del problema
+* Trabajar con los stakeholders para establecer lo que es verdaderamente importante desde la perspectiva del dominio.
+
+Tres formas de descubrir las características arquitectónicas:
+* extracting from domain concerns
+* extracting from requirements
+* extracting from implicit domain knowledge
+
+### Extracting Architecture Characteristics from Domain Concerns
+
+Un arquitecto debe ser capaz de identificar las características arquitectónicas correctas. Por ejemplo, ¿es la escalabilidad la preocupación más importante, o es la tolerancia a los fallos, la seguridad o el rendimiento? Tal vez el sistema requiere las cuatro características combinadas.
+
+La comprensión de los objetivos clave del dominio y de la situación del dominio permite al arquitecto traducir esas preocupaciones del dominio en "-ilities", lo que luego constituye la base de decisiones arquitectónicas correctas y justificables.
+
+Un antipatrón común en la arquitectura implica tratar de diseñar una arquitectura genérica, una que soporte todas las características de la arquitectura. El hecho de soportar demasiadas características arquitectónicas conduce a una complejidad cada vez mayor. No se obsesione con el número de características arquitectónicas, sino con la motivación para mantener el diseño simple.
+
+En vez de tener un lista completa de características arquitectónicas para satisfacer, lo que se debe hacer es que lo stakeholders seleccionen una las 3 características más importantes de la lista final. Esto no sólo hace mucho más fácil de lograr el consenso, sino que también fomenta los debates sobre lo que es más importante y ayuda al arquitecto a analizar los trade-offs cuando toma decisiones vitales en materia de arquitectura.
+
+La mayoría de las características arquietctónicas se obtienen escuchando a los stakeholders y colaborando con ellos para determinar qué es importantes desde la perspectiva del negocio. 
+
+Aunque esto puede parecer una actividad sencilla, el problema es que los arquitectos y los stakeholders del negocio hablan idiomas diferentes. Los arquitectos hablan de escalabilidad, interoperabilidad, tolerancia a los fallos, capacidad de aprendizaje y disponibilidad. Los stakeholders del neogcio hablan de fusiones y adquisiciones, satisfacción del usuario, time to market y ventaja competitiva. 
+
+Lo que sucede es un problema de "lost in translation" en el que el arquitecto y el stakeholder del negocio no se entienden entre sí. Los arquitectos no tienen ni idea de cómo crear una arquitectura que apoye la satisfacción del usuario, y los interesados en el dominio no entienden por qué hay tanta atención y hablan de disponibilidad, interoperabilidad, capacidad de aprendizaje y tolerancia a los fallos en la aplicación. Afortunadamente, suele haber una traducción de las preocupaciones del dominio a las características de la arquitectura. 
+
+![](img/domain-concerns-to-architecture-characteristics.png)
+
+Recordar que normalmente un "Domain concern" implica satisfacer la combinación varias características arquitectónicas y hay que tener cuidado de no caer en la trampa de concentrarnos en uno sólo de ellos.
+
+Qué significa "Lost in translation"
+* http://spanishstudies.blogspot.com/2006/03/lost-in-translation.html
+* https://www.bbc.com/mundo/noticias-48279142
+
+
+### Extracting Architecture Characteristics from Requirements
+
+
 ## Chapter 8. Component-Based Thinking
 
 URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch08.html#ch-component-based-thinking
