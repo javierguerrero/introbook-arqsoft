@@ -250,6 +250,8 @@ Nunca se busca la mejor arquitectura, sino la menos mala.
 
 ## Chapter 5. Identifying Architectural Characteristics
 
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch05.html#ch-identifying
+
 ```
 Identificar las características arquitectónicas es el primer paso para crear una arquitectura o determinar la validez de una arquitetura existente.
 ```
@@ -271,13 +273,13 @@ La comprensión de los objetivos clave del dominio y de la situación del domini
 
 Un antipatrón común en la arquitectura implica tratar de diseñar una arquitectura genérica, una que soporte todas las características de la arquitectura. El hecho de soportar demasiadas características arquitectónicas conduce a una complejidad cada vez mayor. No se obsesione con el número de características arquitectónicas, sino con la motivación para mantener el diseño simple.
 
-En vez de tener un lista completa de características arquitectónicas para satisfacer, lo que se debe hacer es que lo stakeholders seleccionen una las 3 características más importantes de la lista final. Esto no sólo hace mucho más fácil de lograr el consenso, sino que también fomenta los debates sobre lo que es más importante y ayuda al arquitecto a analizar los trade-offs cuando toma decisiones vitales en materia de arquitectura.
+En vez de tener un lista completa de características arquitectónicas para satisfacer, lo que se debe hacer es que lo stakeholders seleccionen las 3 características más importantes de la lista final. Esto no sólo hace mucho más fácil de lograr el consenso, sino que también fomenta los debates sobre lo que es más importante y ayuda al arquitecto a analizar los trade-offs cuando toma decisiones vitales en materia de arquitectura.
 
 La mayoría de las características arquietctónicas se obtienen escuchando a los stakeholders y colaborando con ellos para determinar qué es importantes desde la perspectiva del negocio. 
 
-Aunque esto puede parecer una actividad sencilla, el problema es que los arquitectos y los stakeholders del negocio hablan idiomas diferentes. Los arquitectos hablan de escalabilidad, interoperabilidad, tolerancia a los fallos, capacidad de aprendizaje y disponibilidad. Los stakeholders del neogcio hablan de fusiones y adquisiciones, satisfacción del usuario, time to market y ventaja competitiva. 
+Aunque esto puede parecer una actividad sencilla, el problema es que los arquitectos y los stakeholders del negocio hablan idiomas diferentes. Los arquitectos hablan de escalabilidad, interoperabilidad, tolerancia a los fallos, capacidad de aprendizaje y disponibilidad. Los stakeholders del negocio hablan de fusiones y adquisiciones, satisfacción del usuario, time to market y ventaja competitiva. 
 
-Lo que sucede es un problema de "lost in translation" en el que el arquitecto y el stakeholder del negocio no se entienden entre sí. Los arquitectos no tienen ni idea de cómo crear una arquitectura que apoye la satisfacción del usuario, y los interesados en el dominio no entienden por qué hay tanta atención y hablan de disponibilidad, interoperabilidad, capacidad de aprendizaje y tolerancia a los fallos en la aplicación. Afortunadamente, suele haber una traducción de las preocupaciones del dominio a las características de la arquitectura. 
+Lo que sucede es un problema de "lost in translation" en el que el arquitecto y el stakeholder del negocio no se entienden entre sí. Los arquitectos no tienen ni idea de cómo crear una arquitectura que apoye la satisfacción del usuario, y los stakeholders del negocio no entienden por qué hay tanta atención y hablan de disponibilidad, interoperabilidad, capacidad de aprendizaje y tolerancia a los fallos en la aplicación. Afortunadamente, suele haber una traducción de las preocupaciones del dominio a las características de la arquitectura. 
 
 ![](img/domain-concerns-to-architecture-characteristics.png)
 
@@ -289,6 +291,20 @@ Qué significa "Lost in translation"
 
 
 ### Extracting Architecture Characteristics from Requirements
+
+Algunas características de la arquitectura provienen de declaraciones explícitas en los documentos de requisitos.
+
+Otras provienen del conocimiento inherente del dominio por parte de los arquitectos, una de las muchas razones por las que el conocimiento del dominio es siempre beneficioso para los arquitectos.
+
+![](img/7-product-dimensions.png)
+
+### Architecture Katas
+* https://www.youtube.com/watch?v=w_jSI5Xs1Ag
+* https://blog.adrianbolboaca.ro/2013/01/architectural-kata/
+* https://www.youtube.com/watch?v=quLrc3PbuIw&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX
+* http://nealford.com/katas/
+* https://stevenschwenke.de/myFirstArchitecturalKata
+
 
 
 ## Chapter 8. Component-Based Thinking
