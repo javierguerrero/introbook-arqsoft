@@ -250,7 +250,7 @@ Nunca se busca la mejor arquitectura, sino la menos mala.
 
 ## Chapter 5. Identifying Architectural Characteristics
 
-URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch05.html#ch-identifying
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch05.html
 
 ```
 Identificar las características arquitectónicas es el primer paso para crear una arquitectura o determinar la validez de una arquitetura existente.
@@ -304,12 +304,65 @@ Otras provienen del conocimiento inherente del dominio por parte de los arquitec
 * https://www.youtube.com/watch?v=quLrc3PbuIw&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX
 * http://nealford.com/katas/
 * https://stevenschwenke.de/myFirstArchitecturalKata
+* https://simplicable.com/new/system-architecture
 
 
+## Chapter 6. Measuring and Governing Architecture Characteristics
 
-## Chapter 8. Component-Based Thinking
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch06.html
 
-URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch08.html#ch-component-based-thinking
+Vamos a aprender como expresar de manera concreta las características arquitectónicas más comunes, además de mecanismos de governanza.
+
+En las organizaciones, hay tres problemas alrededor de las características arquitectónicas:
+* No son físicas: Muchas características arquitectónicas tienen significados vagos.
+* Tienen definiciones muy variadas: 
+* Demasiada compuestos: Los desarrolladores pueden descomponer la agilidad en modularity, deployability y testability.
+
+La necesidad de expresar de manera concreta las características arquitectónicas resuelven los problemas anteriores, es cuestión de ponerse de acuedo dentro de la organización.
+
+### Measuring Architecture Characteristics
+
+* Operational Measures
+    * La performance y la scalability tienen mediciones directas que ofrecen interpretaciones variadas dependiendo de los objetivos del equipo.
+    * Los equipos de alto nivel basan sus definiciones en el análisis estadístico.
+    * Por ejemplo, digamos que un servicio de transmisión de video quiere monitorear la escalabilidad. En lugar de establecer un número arbitrario como objetivo, los ingenieros miden la escala a lo largo del tiempo y construyen modelos estadísticos, y luego dan la alarma si las métricas en tiempo real quedan fuera de los modelos de predicción.
+* Structural Measures
+    * Para medir la complejidad del código usamos la métrica **complejidad ciclomática**
+    * Si los equipos no se fijan en la creciente complejidad gradual, esa complejidad dominará la base de código.
+* Process Measures
+    * ?
+
+### Governance and Fitness Functions
+
+Una vez que los arquitectos han establecido las características arquitectónicas y las han priorizado, ¿cómo pueden asegurarse de que los desarrolladores respetarán esas prioridades? 
+
+#### Governing Architecture Characteristics
+La gobernanza es una importante responsabilidad del rol del arquitecto
+
+Garantizar la calidad del software dentro de una organización entra en el ámbito de la gobernanza de la arquitectura porque entra en el ámbito de la arquitectura, y la negligencia puede dar lugar a problemas de calidad desastrosos.
+
+Soluciones para la gobernanza
+* DevOps
+* El libro Building Evolutionary Architectures (O'Reilly) describe una familia de técnicas, llamadas **fitness functions**, utilizadas para automatizar muchos aspectos del gobierno de la arquitectura.
+
+#### Fitness Functions
+
+Una fitness function (función de aptitud) se utiliza para evaluar lo cerca que está el resultado de alcanzar el objetivo.
+
+Las prácticas de la arquitectura evolutiva toman prestado el concepto de fitness function de la computación evolutiva para crear una **architecture fitness function**
+
+>**Architecture fitness function:** Cualquier mecanismo que proporcione una evaluación objetiva de la integridad de alguna característica de la arquitectura o combinación de características de la arquitectura
+
+![](img/mechanisms-fitness-functions.png)
+
+Se pueden utilizar muchas herramientas diferentes para implementar las fitness functions, dependiendo de las características arquitectónicas.
+* CYCLIC DEPENDENCIES
+    * Patrón dañino que los arquitectos deben evitar
+    * Perjudica la modularidad porque un desarrollador no puede reutilizar un solo componente sin traer también los otros
+    * La solución a este problema es escribir una fitness function para detectar los ciclos.
+    * Colocar las pruebas en el continuous build
+* DISTANCE FROM THE MAIN SEQUENCE FITNESS FUNCTION
+
 
 <hr />
 
