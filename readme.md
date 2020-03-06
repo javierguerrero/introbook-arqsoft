@@ -89,7 +89,7 @@ Todo arquitecto debe codificar y tener un cierto nivel de profundidad técnica. 
 
 ## Chapter 3. Modularity
 
-URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch03.html#ch-modularity
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch03.html
 
 Algunas ideas generales:
 * La modularidad es un principio organizador. 
@@ -362,6 +362,77 @@ Se pueden utilizar muchas herramientas diferentes para implementar las fitness f
     * La solución a este problema es escribir una fitness function para detectar los ciclos.
     * Colocar las pruebas en el continuous build
 * DISTANCE FROM THE MAIN SEQUENCE FITNESS FUNCTION
+
+
+## Chapter 8. Component-Based Thinking
+
+Los arquitectos suelen pensar en términos de componentes, la manifestación física de un módulo.
+
+### Component Scope
+
+Algunas formas de los componentes:
+* Library: Envoltorio de código relacionado (clases o funciones)
+* Layer or subsystem
+* Event processor
+* Distributed service: Se comunican a través de protocolos de red: TCPI/IP, REST
+
+![](img/variedades-componentes.png)
+
+Nada requiere que un arquitecto utilice componentes; sólo sucede que a menudo es útil tener un nivel más alto de modularidad que el nivel más bajo que ofrece el lenguaje
+
+Los componentes forman el bloque de construcción modular fundamental en la arquitectura, lo que los convierte en una consideración crítica para los arquitectos. De hecho, una de las principales decisiones que un arquitecto debe tomar se refiere a la división de alto nivel de los componentes en la arquitectura.
+
+### Architect Role
+
+Los arquitectos crean el diseño inicial del software, incorporando las características arquitectónicas.
+
+Por lo general, el componente es el nivel más bajo del sistema de software con el que un arquitecto interactúa directamente.
+
+Los componentes consisten en clases o funciones (dependiendo de la plataforma de implementación), cuyo diseño es responsabilidad de los líderes técnicos o los desarrolladores
+
+```
+Un arquitecto debe identificar los componentes como una de las primeras tareas de un nuevo proyecto. Pero antes de que un arquitecto pueda identificar los componentes, debe saber cómo dividir la arquitectura.
+```
+
+#### Particionar la arquitectura (partición de nivel superior)
+
+La Primera Ley de Arquitectura de Software establece que todo en el software es un trade-off, incluyendo la forma en que los arquitectos crean componentes en una arquitectura. Debido a que los componentes representan un mecanismo de contención general, un arquitecto puede construir cualquier tipo de partición que desee. Existen varios estilos comunes, con diferentes conjuntos de trade-offs. Discutimos los estilos de arquitectura en profundidad en la Parte II. Aquí discutimos un aspecto importante de los estilos, la partición de nivel superior en una arquitectura.
+
+![Two types of top-level architecture partitioning: layered and modular](img/layered-modular.png)
+
+Particionamientos de alto nivel en arquitectura:
+* Layered monolith
+    * división técnica de alto nivel
+    * MVC coincide con esta forma de particionamiento
+* Modular monolith 
+    * división en torno a los dominios o flujos de trabajo
+    * Inspirado en el libro de Eric Evans (técnica de modelado para descomponer sistemas complejos). 
+    * La arquitectura de microservicios se basa en esto
+
+![Two types of top-level partitioning in architecture](img/technical-donmain-partitioning.png)
+
+Una de las distinciones fundamentales entre los diferentes patrones de arquitectura es **qué tipo de partición de nivel superior** soporta cada uno. También tiene un gran impacto en la forma en que un arquitecto decide cómo identificar inicialmente los componentes: ¿el arquitecto quiere hacer una partición técnica o por dominio?
+
+
+### Developer Role
+
+Los desarrolladores suelen tomar componentes, diseñados conjuntamente con el arquitecto, y los subdividen en clases, funciones o subcomponentes. En general, el diseño de clases y funciones es responsabilidad compartida de los arquitectos, los líderes técnicos y los desarrolladores, y la mayor parte de las funciones de los desarrolladores. 
+
+Los desarrolladores nunca deben tomar los componentes diseñados por los arquitectos como la última palabra; todo el diseño de software se beneficia de la iteración. Más bien, ese diseño inicial debe considerarse como un primer borrador, en el que la implementación revelará más detalles y refinamientos.
+
+### Component Identification Flow
+
+La identificación de los componentes funciona mejor como un proceso iterativo, produciendo candidatos y refinamientos a través de la retroalimentación, ilustrado en la Figura:
+
+![Component identification cycle](img/component-identification-cycle.png)
+
+### Component Granularity
+
+### Component Design
+
+### Case Study: Going, Going, Gone: Discovering Components
+
+### Architecture Quantum Redux: Choosing Between Monolithic Versus Distributed Architectures
 
 
 <hr />
