@@ -1,9 +1,17 @@
-# Table of contents
-TO-DO
 
+## Tabla de contenido
+- [MODULE I](#module-i)
+- [MODULE II: FOUNDATIONS](#module-ii-foundations)
+    - [Chapter 2. Architectural Thinking](#chapter-2-architectural-thinking)
+    - [Chapter 3. Modularity](#chapter-3-modularity)
+    - [Chapter 4. Architecture Characteristics Defined](#chapter-4-architecture-characteristics-defined)
+    - [Chapter 5. Identifying Architectural Characteristics](#chapter-5-identifying-architectural-characteristics)
+    - [Chapter 6. Measuring and Governing Architecture Characteristics](#chapter-6-measuring-and-governing-architecture-characteristics)
+    - [Chapter 7. Scope of Architecture Characteristics](#chapter-7-scope-of-architecture-characteristics)
+    - [Chapter 8. Component-Based Thinking](#chapter-8-component-based-thinking)
+- [MODULE III: ARCHITECTURE STYLES](#module-iii-architecture-styles)
 
-
-# MODULE I <a name="ModuleI"></a>
+## MODULE I
 
 ## 1. Introduction
 
@@ -15,13 +23,13 @@ TO-DO
 
 ### Laws of Software Architecture
 
-<hr />
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
-# MODULE II: FOUNDATIONS <a name="ModuleII"></a>
+## MODULE II FOUNDATIONS
 
 Para comprender los importantes trade-offs en la arquitectura, los desarrolladores deben entender algunos conceptos y terminología básicos relativos a los componentes, la modularidad, el acoplamiento y la connascence.
 
-## Chapter 2. Architectural Thinking
+### Chapter 2. Architectural Thinking
 
 URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch02.html#ch-architectural-thinking
 
@@ -87,7 +95,9 @@ Todo arquitecto debe codificar y tener un cierto nivel de profundidad técnica. 
 * Automatizar tareas repetitivas. El equipo de desarrollo agradecerá la automatización.
 * Hacer code reviews frecuentemente.
 
-## Chapter 3. Modularity
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
+
+### Chapter 3. Modularity
 
 URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch03.html
 
@@ -189,7 +199,9 @@ Hasta ahora, hemos discutido tanto el acoplamiento como la connascence, medidas 
 
 Los módulos son una colección de código relacionado. Sin embargo, **los arquitectos suelen pensar en términos de componentes, la manifestación física de un módulo**.
 
-## Chapter 4. Architecture Characteristics Defined
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
+
+### Chapter 4. Architecture Characteristics Defined
 
 Además de los requisitos funcionales necesarios para desarrollar un sistema de software el arquitecto debe considerar otros factores para diseñar una solución de software. Una solución de software consiste de requerimientos funcionales y características arquitectónicas.
 
@@ -248,7 +260,7 @@ Tip:
 Nunca se busca la mejor arquitectura, sino la menos mala.
 ```
 
-## Chapter 5. Identifying Architectural Characteristics
+### Chapter 5. Identifying Architectural Characteristics
 
 URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch05.html
 
@@ -306,8 +318,9 @@ Otras provienen del conocimiento inherente del dominio por parte de los arquitec
 * https://stevenschwenke.de/myFirstArchitecturalKata
 * https://simplicable.com/new/system-architecture
 
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
-## Chapter 6. Measuring and Governing Architecture Characteristics
+### Chapter 6. Measuring and Governing Architecture Characteristics
 
 URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch06.html
 
@@ -363,8 +376,9 @@ Se pueden utilizar muchas herramientas diferentes para implementar las fitness f
     * Colocar las pruebas en el continuous build
 * DISTANCE FROM THE MAIN SEQUENCE FITNESS FUNCTION
 
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
-## Chapter 8. Component-Based Thinking
+### Chapter 8. Component-Based Thinking
 
 Los arquitectos suelen pensar en términos de componentes, la manifestación física de un módulo.
 
@@ -414,7 +428,7 @@ Particionamientos de alto nivel en arquitectura:
 Una de las distinciones fundamentales entre los diferentes patrones de arquitectura es **qué tipo de partición de nivel superior** soporta cada uno. También tiene un gran impacto en la forma en que un arquitecto decide cómo identificar inicialmente los componentes: ¿el arquitecto quiere hacer una partición técnica o por dominio?
 
 
-### Developer Role
+### Developer Role
 
 Los desarrolladores suelen tomar componentes, diseñados conjuntamente con el arquitecto, y los subdividen en clases, funciones o subcomponentes. En general, el diseño de clases y funciones es responsabilidad compartida de los arquitectos, los líderes técnicos y los desarrolladores, y la mayor parte de las funciones de los desarrolladores. 
 
@@ -432,12 +446,11 @@ La identificación de los componentes funciona mejor como un proceso iterativo, 
 
 ### Case Study: Going, Going, Gone: Discovering Components
 
-### Architecture Quantum Redux: Choosing Between Monolithic Versus Distributed Architectures
+### Architecture Quantum Redux: Choosing Between Monolithic Versus Distributed Architectures
 
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
-<hr />
-
-# MODULE III: ARCHITECTURE STYLES
+## MODULE III ARCHITECTURE STYLES
 
 ## Chapter 9. Foundations
 
@@ -506,3 +519,4 @@ Otros problemas que enfrentan las arquitecturas distribuidas son:
 * DISTRIBUTED TRANSACTIONS: Este es uno de los trade-offs de la arquitectura distribuida: alta escalabilidad, rendimiento y disponibilidad a costa de la consistencia y la integraidad de datos.
 * CONTRACT MAINTENANCE AND VERSIONING: 
 
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
