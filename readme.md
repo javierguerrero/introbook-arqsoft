@@ -544,6 +544,8 @@ El estilo de la arquitectura en capas también cae en varios anti-patrones arqui
 * architecture by implication
 * accidental architecture
 
+Siendo de naturaleza monolítica, las arquitecturas en capas no tienen las complejidades asociadas con los estilos de arquitectura distribuida, son simples y fáciles de entender, y tienen un costo relativamente bajo de construcción y mantenimiento
+
 #### Topology
 
 Los componentes del estilo de arquitectura en capas se organizan en **capas horizontales lógicas**, y cada capa desempeña una función específica dentro de la aplicación (como la lógica de presentación o la lógica de negocio). 
