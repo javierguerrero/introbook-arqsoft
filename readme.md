@@ -1,7 +1,6 @@
 
 ## Tabla de contenido
-- [MODULE I](#module-i)
-- [MODULE II: FOUNDATIONS](#module-ii-foundations)
+- [MODULE I: FOUNDATIONS](#)
     - [Chapter 2. Architectural Thinking](#chapter-2-architectural-thinking)
     - [Chapter 3. Modularity](#chapter-3-modularity)
     - [Chapter 4. Architecture Characteristics Defined](#chapter-4-architecture-characteristics-defined)
@@ -9,23 +8,19 @@
     - [Chapter 6. Measuring and Governing Architecture Characteristics](#chapter-6-measuring-and-governing-architecture-characteristics)
     - [Chapter 7. Scope of Architecture Characteristics](#chapter-7-scope-of-architecture-characteristics)
     - [Chapter 8. Component-Based Thinking](#chapter-8-component-based-thinking)
-- [MODULE III: ARCHITECTURE STYLES](#module-iii-architecture-styles)
+- [MODULE II: ARCHITECTURE STYLES](#)
+    - [Chapter 9. Foundations](#chapter-9-foundations)
+    - [Chapter 10. Layered Architecture Style](#chapter-10-layered-architecture-style)
+    - [Chapter 11. Pipeline Architecture Style](#)
+    - [Chapter 12. Microkernel Architecture Style](#)
+    - [Chapter 13. Service-Based Architecture Style](#)
+    - [Chapter 14. Event-Driven Architecture Style](#)
+    - [Chapter 15. Space-Based Architecture Style](#)
+    - [Chapter 16. Orchestration-Driven Service-Oriented Architecture](#)
+    - [Chapter 17. Microservices Architecture](#)
+    - [Chapter 18. Choosing the Appropriate Architecture Style](#)
 
-## MODULE I
-
-## 1. Introduction
-
-### Defining Software Architecture
-
-### Expectations of an Architect
-
-### Intersection of Architecture and…
-
-### Laws of Software Architecture
-
-<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
-
-## MODULE II FOUNDATIONS
+## MODULE I FOUNDATIONS
 
 Para comprender los importantes trade-offs en la arquitectura, los desarrolladores deben entender algunos conceptos y terminología básicos relativos a los componentes, la modularidad, el acoplamiento y la connascence.
 
@@ -378,6 +373,24 @@ Se pueden utilizar muchas herramientas diferentes para implementar las fitness f
 
 <div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
+### Chapter 7. Scope of Architecture Characteristics
+
+
+
+
+
+```
+¿Qué es un quantum?
+
+El origen del término proviene de los estudios de Max Planck cuando investigaba la forma en que dos sistemas, uno, el “horno que calentaba” y el otro, el “cuerpo calentado”, intercambiaban energía entre sí. Él descubrió que llegado cierto punto de la interacción, el intercambio se producía por unidades indivisibles a las que llamó quantum.
+
+Quantum es la mínima cantidad de energía que un sistema puede intercambiar con otro. Por ejemplo, en el sistema monetario, el quantum del Euro sería 1 céntimo de Euro, que es la mínima cantidad indivisible que se puede intercambiar.
+```
+
+
+
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
+
 ### Chapter 8. Component-Based Thinking
 
 Los arquitectos suelen pensar en términos de componentes, la manifestación física de un módulo.
@@ -450,25 +463,25 @@ La identificación de los componentes funciona mejor como un proceso iterativo, 
 
 <div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
-## MODULE III ARCHITECTURE STYLES
+## MODULE II ARCHITECTURE STYLES
 
-## Chapter 9. Foundations
+### Chapter 9. Foundations
 
-URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch09.html#ch-architecture-styles
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch09.html
 
 Los estilos arquitectónicos (algunas veces llamados patrones de arquitectura) describen una relación nombrada de componentes que cubren una variedad de características de la arquitectura.
 
 Los arquitectos deben estar familiarizados con los nombres básicos de los estilos arquitectónicos genéricos fundamentales.
 
-### Fundamental Patterns
+#### Fundamental Patterns
 
-#### Big Ball of Mud
+Big Ball of Mud
 
 Se refiere a la ausencia de cualquier estructura arquitectónica.
 
 ![](img/big-ball-mud.png)
 
-#### Unitary Architecture
+Unitary Architecture
 
 La arquitectura unitaria se refiere a un sistema específico que funciona en un hardware específico. 
 
@@ -476,7 +489,7 @@ Investigar: "embedded systems"
 https://www.guru99.com/embedded-systems-tutorial.html
 
 
-#### Client/Server
+Client/Server
 
 Con el tiempo, cuando las redes de computadoras se hicieron común, surgió la necesidad de separar en partes un sistema (sistema distribuido).
 
@@ -487,7 +500,7 @@ Algunos sabores de estilo arquitectónico son:
 * BROWSER + WEB SERVER
 * THREE-TIER
 
-### Monolithic Versus Distributed Architectures
+Monolithic Versus Distributed Architectures
 
 Los estilos de arquitectura pueden clasificarse en dos tipos principales: monolíticos (una sola unidad de despliegue de todo el código) y distribuidos (múltiples unidades de despliegue conectadas a través de protocolos de acceso remoto.
 
@@ -520,3 +533,74 @@ Otros problemas que enfrentan las arquitecturas distribuidas son:
 * CONTRACT MAINTENANCE AND VERSIONING: 
 
 <div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
+
+### Chapter 10. Layered Architecture Style
+
+La arquitectura en capas es uno de los estilos arquitectónicos más comunes. Este estilo de arquitectura es el estándar de facto para la mayoría de las aplicaciones, principalmente por su simplicidad, familiaridad y bajo costo.
+
+También es una forma muy natural de desarrollar aplicaciones debido a la ley de Conway, que establece que las organizaciones que diseñan sistemas están obligadas a producir diseños que son copias de las estructuras de comunicación de estas organizaciones. En la mayoría de las organizaciones hay desarrolladores de interfaces de usuario (UI), desarrolladores de backend, desarrolladores de reglas y expertos en bases de datos (DBA). Estas capas organizativas encajan muy bien en los niveles de una arquitectura tradicional de capas, lo que la convierte en una opción natural para muchas aplicaciones comerciales. 
+
+El estilo de la arquitectura en capas también cae en varios anti-patrones arquitectónicos:
+* architecture by implication
+* accidental architecture
+
+#### Topology
+
+Los componentes del estilo de arquitectura en capas se organizan en **capas horizontales lógicas**, y cada capa desempeña una función específica dentro de la aplicación (como la lógica de presentación o la lógica de negocio). 
+
+La mayoría de las arquitecturas en capas consisten en cuatro capas estándar: presentación, negocio, persistencia y base de datos, como se ilustra en la sigiuente figura:
+
+![](img/arquitectura-en-capas.png)
+
+También existen diversas variantes de topología desde la perspectiva de la estratificación física (despliegue). 
+
+![](img/physical-topology-deployment.png)
+
+El concepto de **separación de responsabilidades** dentro del estilo de la arquitectura en capas hace fácil la construcción de roles efectivos y modelos de responsabilidad dentro de la arquitectura. 
+
+Los componentes dentro de una capa específica están limitados en su alcance, tratando sólo con la lógica que pertenece a esa capa. Por ejemplo, los componentes de la capa de presentación sólo se ocupan de la lógica de presentación, mientras que los componentes que residen en la capa de negocio sólo se ocupan de la lógica de negocio. 
+
+Esto permite a los desarrolladores aprovechar sus conocimientos técnicos particulares para centrarse en los aspectos técnicos del dominio (como la lógica de presentación o la lógica de persistencia). Sin embargo, la contrapartida de este beneficio es la falta de agilidad general (la capacidad de responder rápidamente a los cambios).
+
+#### Layers of Isolation
+
+Cada capa en el estilo de arquitectura de capas puede ser cerrada o abierta. Una capa cerrada significa que a medida que una solicitud se mueve de arriba a abajo de una capa a otra, la solicitud no puede saltarse ninguna capa, sino que debe atravesar la capa inmediatamente inferior para llegar a la siguiente. Por ejemplo, en una arquitectura de capas cerradas, una solicitud originada en la capa de presentación debe pasar primero por la capa de negocios y luego por la capa de persistencia antes de llegar finalmente a la capa de la base de datos.
+
+![](img/closed-layers.png)
+
+Sería mucho más rápido y fácil para la capa de presentación acceder directamente a la base de datos para solicitudes de recuperación simples, pasando por alto cualquier capa innecesaria (lo que solía conocerse a principios de la década de 2000 como el patrón de lectura rápida). Para que esto ocurriera, las capas de negocio y de persistencia tendrían que estar abiertas, permitiendo que las solicitudes pasen por alto otras capas. ¿Qué es mejor: capas abiertas o capas cerradas? La respuesta a esta pregunta se encuentra en un concepto clave conocido como **aislamineto de capas**.
+
+El concepto **aislamiento de capas** significa que los cambios realizados en una capa de la arquitectura generalmente no impactan o afectan a los componentes de las otras capas, siempre que los contratos entre esas capas permanezcan inalterados. Cada capa es independiente de las otras capas, por lo que se tiene poco o ningún conocimiento del funcionamiento interno de las otras capas de la arquitectura. Sin embargo, para soportar el aislamiento de capas, las capas involucradas con el flujo principal de la solicitud necesariamente tienen que ser cerradas. Si la capa de presentación puede acceder directamente a la capa de persistencia, entonces los cambios realizados en la capa de persistencia impactarían tanto en la capa de negocio como en la capa de presentación, produciendo una aplicación muy estrechamente acoplada con interdependencias de capas entre componentes. Este tipo de arquitectura se vuelve entonces muy frágil, así como difícil y costoso de cambiar.
+
+El concepto **aislamiento de capas** también permite sustituir cualquier capa de la arquitectura sin afectar a ninguna otra capa (una vez más, suponiendo que los contratos estén bien definidos y que se utilice el business delegate pattern). Por ejemplo, puede aprovechar el concepto de aislamiento de capas dentro del estilo de arquitectura en capas para sustituir su antigua capa de presentación de JavaServer Faces (JSF) por React.js sin afectar a ninguna otra capa de la aplicación.
+
+#### Adding Layers
+
+Mientras que las capas cerradas facilitan el aislamiento de capas y por lo tanto ayudan a aislar el cambio dentro de la arquitectura, hay momentos en los que tiene sentido que ciertas capas estén abiertas. 
+
+Aprovechar el concepto de capas abiertas y cerradas ayuda a definir la relación entre las capas de la arquitectura y los flujos de solicitud. También proporciona a los desarrolladores la información y la orientación necesarias para comprender las diversas restricciones de acceso a las capas dentro de la arquitectura. 
+
+El fracaso en documentar o comunicar adecuadamente qué capas de la arquitectura están abiertas y cerradas (y por qué) suele dar lugar a arquitecturas estrechamente acopladas y quebradizas que son muy difíciles de probar, mantener y desplegar.
+
+#### Other Considerations
+
+La arquitectura en capas es un buen punto de partida para la mayoría de las aplicaciones cuando no se sabe aún exactamente qué estilo de arquitectura se utilizará finalmente. 
+
+Una cosa a tener en cuenta con la arquitectura de capas es el anti-patrón **architecture sinkhole**. Este anti-patrón se produce cuando las solicitudes se mueven de una capa a otra como un simple pasamano sin que se realice una lógica de negocio dentro de cada capa. Esto da como resultado una instanciación y procesamiento innecesarios de los objetos, lo que afecta tanto al consumo de memoria como al rendimiento. Analizar el porcentaje de solicitudes que caen en esta categoría. Es aceptable que sólo el 20% de las solicitudes que estén dentro de este anti-patrón.
+
+#### Why Use This Architecture Style
+
+El estilo de arquitectura en capas es una buena opción para aplicaciones o sitios web pequeños y simples. 
+
+También es una buena elección de arquitectura, particularmente como punto de partida, para situaciones con un presupuesto muy ajustado y limitaciones de tiempo. 
+
+Debido a la simplicidad y familiaridad entre los desarrolladores y arquitectos, la arquitectura en capas es quizás uno de los estilos de arquitectura de más bajo costo, promoviendo la facilidad de desarrollo para aplicaciones más pequeñas. 
+
+El estilo de arquitectura en capas también es una buena opción cuando un arquitecto todavía está analizando las necesidades y requerimientos del negocio y no está seguro de qué estilo de arquitectura sería el mejor.
+
+
+A medida que crecen las aplicaciones que utilizan el estilo de arquitectura en capas, características como la mantenibilidad, la agilidad, la comprobabilidad y la capacidad de despliegue se ven afectadas negativamente. Por esta razón, las grandes aplicaciones y sistemas que utilizan la arquitectura en capas podrían ser más adecuadas para otros estilos de arquitectura más modulares.
+
+#### Architecture Characteristics Ratings
+
+![](img/layered-architecture-characteristics-ratings.png)
