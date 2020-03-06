@@ -31,7 +31,7 @@ Para comprender los importantes trade-offs en la arquitectura, los desarrollador
 
 ### Chapter 2. Architectural Thinking
 
-URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch02.html#ch-architectural-thinking
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch02.html
 
 A diferencia de un developer, un arquitecto debe desarrollar un "pensamiento arquitectónico". El pensamiento arquitectónico implica:
 * Entender la diferencia entre arquitectura y diseño
@@ -39,7 +39,7 @@ A diferencia de un developer, un arquitecto debe desarrollar un "pensamiento arq
 * Entender, analizar y reconciliar trade-offs entre varias soluciones y tecnologías
 * Entender los requisitos de negocio y traducirlos a características arquitectónicas
 
-### Arquitectura vs Diseño
+#### Arquitectura vs Diseño
 
 * La visión tradicional de arquitectura y diseño es la siguiente:
 ![](img/responsabilidades-arq-dev.png)
@@ -49,7 +49,7 @@ A diferencia de un developer, un arquitecto debe desarrollar un "pensamiento arq
 
 ![](img/arquitectura-vs-diseno.png)
 
-### Amplitud técnica
+#### Amplitud técnica
 Mienras que un desarrollador debe tener una profundidad técnica para realizar su trabajo, un arquitecto debe tener una amplitud técnica para pensar desde un punto de vista de la arquitectura.
 
 Cualquier individuo puede dividir todos sus conocimientos en tres secciones: cosas que sabe, cosas que sabe que no sabe y cosas que no sabe que no sabe.
@@ -63,7 +63,7 @@ Sin embargo, la naturaleza del conocimiento cambia a medida que los desarrollado
 Equilibrar su cartera de conocimientos en cuanto a profundidad y amplitud es algo que todo desarrollador debería considerar a lo largo de su carrera.
 
 
-### Analyzing Trade-Offs
+#### Analyzing Trade-Offs
 
 Pensar como arquitecto implica en evaluar los trade-offs de cada alternativa para elegir la mejor solución.
 
@@ -83,11 +83,11 @@ Pensar arquitectónicamente implica observar los beneficios de una solución dad
 
 Todo en la arquitectura tiene un trade-off: una ventaja y una desventaja. Pensar como arquitecto es pensar en estos trade-off y luego preguntarse "¿Qué es más importante: la extensibilidad o la seguridad?". La decisión entre las diferentes soluciones siempre dependerá de los drivers de negocio, el entorno y otra serie de factores más.
 
-### Understanding Business Drivers
+#### Understanding Business Drivers
 
 Pensar como arquitecto requiere entender los requerimientos de negocio para luego traducirlos en características de la arquitectura (escalabilidad, rendimiento, disponibilidad, etc.). Es una tarea compleja porque requiere conocimiento del negocio y buenas relaciones con los principales stakeholders de la empresa.
 
-### Balancing Architecture and Hands-On Coding
+#### Balancing Architecture and Hands-On Coding
 
 Todo arquitecto debe codificar y tener un cierto nivel de profundidad técnica. Algunas formas de que un arquitecto practique la codificación son:
 * Hacer pruebas de concepto (POCs): Esto permite validar una decisión de arquitectura teniendo en cuenta los detalles de la implementación.
@@ -382,7 +382,7 @@ Se pueden utilizar muchas herramientas diferentes para implementar las fitness f
 
 Los arquitectos suelen pensar en términos de componentes, la manifestación física de un módulo.
 
-### Component Scope
+#### Component Scope
 
 Algunas formas de los componentes:
 * Library: Envoltorio de código relacionado (clases o funciones)
@@ -396,7 +396,7 @@ Nada requiere que un arquitecto utilice componentes; sólo sucede que a menudo e
 
 Los componentes forman el bloque de construcción modular fundamental en la arquitectura, lo que los convierte en una consideración crítica para los arquitectos. De hecho, una de las principales decisiones que un arquitecto debe tomar se refiere a la división de alto nivel de los componentes en la arquitectura.
 
-### Architect Role
+#### Architect Role
 
 Los arquitectos crean el diseño inicial del software, incorporando las características arquitectónicas.
 
@@ -434,19 +434,19 @@ Los desarrolladores suelen tomar componentes, diseñados conjuntamente con el ar
 
 Los desarrolladores nunca deben tomar los componentes diseñados por los arquitectos como la última palabra; todo el diseño de software se beneficia de la iteración. Más bien, ese diseño inicial debe considerarse como un primer borrador, en el que la implementación revelará más detalles y refinamientos.
 
-### Component Identification Flow
+#### Component Identification Flow
 
 La identificación de los componentes funciona mejor como un proceso iterativo, produciendo candidatos y refinamientos a través de la retroalimentación, ilustrado en la Figura:
 
 ![Component identification cycle](img/component-identification-cycle.png)
 
-### Component Granularity
+#### Component Granularity
 
-### Component Design
+#### Component Design
 
-### Case Study: Going, Going, Gone: Discovering Components
+#### Case Study: Going, Going, Gone: Discovering Components
 
-### Architecture Quantum Redux: Choosing Between Monolithic Versus Distributed Architectures
+#### Architecture Quantum Redux: Choosing Between Monolithic Versus Distributed Architectures
 
 <div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
