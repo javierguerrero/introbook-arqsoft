@@ -11,14 +11,14 @@
 - [MODULE II: ARCHITECTURE STYLES](#)
     - [Chapter 9. Foundations](#chapter-9-foundations)
     - [Chapter 10. Layered Architecture Style](#chapter-10-layered-architecture-style)
-    - [Chapter 11. Pipeline Architecture Style](#)
-    - [Chapter 12. Microkernel Architecture Style](#)
-    - [Chapter 13. Service-Based Architecture Style](#)
-    - [Chapter 14. Event-Driven Architecture Style](#)
-    - [Chapter 15. Space-Based Architecture Style](#)
-    - [Chapter 16. Orchestration-Driven Service-Oriented Architecture](#)
-    - [Chapter 17. Microservices Architecture](#)
-    - [Chapter 18. Choosing the Appropriate Architecture Style](#)
+    - [Chapter 11. Pipeline Architecture Style](#chapter-11-pipeline-architecture-style)
+    - [Chapter 12. Microkernel Architecture Style](#chapter-12-microkernel-architecture-style)
+    - [Chapter 13. Service-Based Architecture Style](#chapter-13-service-based-architecture-style)
+    - [Chapter 14. Event-Driven Architecture Style](#chapter-14-event-driven-architecture-style)
+    - [Chapter 15. Space-Based Architecture Style](#chapter-15-space-based-architecture-style)
+    - [Chapter 16. Orchestration-Driven Service-Oriented Architecture](#chapter-16-orchestration-driven-service-oriented-architecture)
+    - [Chapter 17. Microservices Architecture](#chapter-17-microservices-architecture)
+    - [Chapter 18. Choosing the Appropriate Architecture Style](#chapter-18-choosing-the-appropriate-architecture-style)
 
 ## MODULE I FOUNDATIONS
 
@@ -606,3 +606,61 @@ A medida que crecen las aplicaciones que utilizan el estilo de arquitectura en c
 #### Architecture Characteristics Ratings
 
 ![](img/layered-architecture-characteristics-ratings.png)
+
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
+
+### Chapter 11. Pipeline Architecture Style
+
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch11.html
+
+También conocido como tuberías y filtros. Esta arquitectura está detrás de los lenguajes de shell de terminales de Unix, como Bash y Zsh. 
+El estilo de arquitectura pipeline normalmente se implementa en aplicaciones de bajo nivel, sin embargo también se puede usar para aplicaciones de negocio.
+
+#### Topology
+
+La topología de la arquitectura tuberías y filtros:
+
+![](img/topologia-pipeline.png)
+
+Pipes
+* Son el canal de comunicación entre los filters
+* Unidireccional
+* Conexión punto a punto por razones de performance
+* El payload que transportan los pipes pueden estar en cualquier formato. Los arquitectos prefieren pequeñas cantidades de datos para permitir un alto rendimiento.
+
+Filters
+* Son autónomos, realizan una sola tarea.
+* Existen 4 tipos de filtros:
+    * Producer: El punto de partida de un proceso.
+    * Transformer
+    * Tester
+    * Consumer: Es el punto de terminación del flujo del pipeline. Los consumers algunas veces persisten el resultado final del procesamiento del pipeline a una base de datos o sino muestran los resultados en la pantalla del usuario.
+
+La naturaleza unidireccional y la simplicidad de los pipes y filters alientan el reuso de la composición. Muchos desarrolladores descubrieron esta habilidad usando shells. 
+
+```
+Anecdota: Escribir un programa que lea un texto y determine la frecuencia de uso de las palabras usadas. Donald Knuth escribió un programa de 1O páginas de Pascal, mientras que Doug McIlroy lo realizó con un shell script corto:
+
+tr -cs A-Za-z '\n' |
+tr A-Z a-z |
+sort |
+uniq -c |
+sort -rn |
+sed ${1}q
+```
+
+#### Casos de uso
+
+El patrón de arquitectura de pipeline aparece en una variedad de aplicaciones, especialmente en tareas que facilitan el procesamiento simple y unidereccional:
+* Herramientas Electronic Data Interchange (EDI)
+* Herramientas ETL
+* Orquestadores y mediadores como Apache Camel
+
+
+#### Architecture Characteristics Ratings
+
+![](img/pipeline-ratings.png)
+
+
+
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
