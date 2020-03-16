@@ -375,10 +375,6 @@ Se pueden utilizar muchas herramientas diferentes para implementar las fitness f
 
 ### Chapter 7. Scope of Architecture Characteristics
 
-
-
-
-
 ```
 ¿Qué es un quantum?
 
@@ -386,8 +382,6 @@ El origen del término proviene de los estudios de Max Planck cuando investigaba
 
 Quantum es la mínima cantidad de energía que un sistema puede intercambiar con otro. Por ejemplo, en el sistema monetario, el quantum del Euro sería 1 céntimo de Euro, que es la mínima cantidad indivisible que se puede intercambiar.
 ```
-
-
 
 <div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
@@ -661,6 +655,79 @@ El patrón de arquitectura de pipeline aparece en una variedad de aplicaciones, 
 
 ![](img/pipeline-ratings.png)
 
+<div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
+### Chapter 12. Microkernel Architecture Style
+
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch12.html
+
+También conocido como arquitectura plug-in. Esta arquitectura se utiliza en aplicaciones empaquetadas y aplicaciones empresariales.
+
+#### Topology
+
+Es una arquitectura monolítica que consiste en dos componentes:
+* Core System
+    * funcionalidad mínima requerida para hacer funcionar el sistema
+    * Permite mover la complejidad ciclomática a los componentes plug-in
+    * Ejemplos: IDE de Eclipse
+* Plug-in components 
+    * Son componentes independientes y autónomos que contienen un procesamiento especializado.
+    * Mejora o amplía el core system
+    * Generalmente, la comunicación entre los componentes plug-ins y el core system es point-to-point (una invocación de un método o llamada a un función)
+    * Puede ser plug-ins compilados o en tiempo de ejecución
+    * Los plug-ins en tiempo de ejecución puede añadirse o eliminarse en tiempo de ejecución sin tener que volver a desplegar el core system u otros plug-ins. Algunos frameworks que lo permiten son:
+        * OSGi (java)
+        * Penrose (java)
+        * Jigsaw (java)
+        * Prism (.NET)
+    * Los plug-ins pueden ser implementados como bibliotecas compartidas (JAR, DLL, Gem)
+    * Los plug-ins no siempre se comunican point-to-point con el core system, existen otras alternativas como REST para invocar la funcionalidad de los plug-ins. Cada plug-in es un servicio autónomo (incluso un microservicio implementado mediante un container). Cada solicitud debe pasar primero por el core system para llegar llegar al plug-in. Esta opción no requiere ningún framework como OSGi o Prims.
+    * El acceso romoto a plugins convierte la arquitectura de microkernel en una arquitectura distribuida en lugar de una monolítica.
+    * Los plug-ins pueden tener sus propias BDs. La BD puede ser externo o puede ser parte del componente.
+
+![](img/microkernel-components.png)
+
+Según el tamaño y la complejidad, el "core system" puede implementarse en capas o un monolito modular. Es típico que toda la aplicación monolítica comparta una única base de datos.
+
+![](img/variations-microkernel-architecture-core-system.png) 
+
+Plugins remotos:
+
+![](img/remote-plugin.png)
+
+#### Registry
+
+El core system necesita saber que plug-ins están disponibles y cómo obtenerlos. Una forma de implementar esto es a través de un registro de plug-ins.
+
+#### Contracts
+
+Los contratos entre los plug-ins y el core system suelen ser un estándar a través de todo un dominio de componentes.
+
+Un contrato incluye:
+* El comportamiento
+* Los datos entrada
+* Los datos de salida
+
+En el caso de plug-ins de teceros que no respeten el contrato, se construye un adaptador para estos. 
+
+#### Casos de uso
+
+Productos
+* IDE de Eclipse
+* Jira
+* Jenkins
+* Navegadores (IE, Chorme, Firefox)
+
+Aplicaciones empresariales
+* insurance claims processing
+* tax preparation software
+
+#### Architecture Characteristics Ratings
+
+![](img/microkernel-ratings.png)
 
 <div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
+
+
+### Chapter 17. Microservices Architecture
+
