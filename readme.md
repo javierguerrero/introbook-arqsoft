@@ -731,3 +731,84 @@ Aplicaciones empresariales
 
 ### Chapter 17. Microservices Architecture
 
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch17.html
+
+#### History
+
+Este estilo arquitectónico se popularizó con un post titulado "Microservicios" en el blog de Martin Fowler (2014).
+
+Microservicios se inspira en gran medida en las ideas del diseño impulsado por el dominio (DDD), un proceso de diseño lógico para proyectos de software. El concepto clave de DDD que inspiró los microservicios fue "bounded context".
+
+Dentro de un "bounded context", las partes internas, como el código y los esquemas de datos, se acoplan entre sí para producir trabajo; pero nunca se acoplan a nada fuera del "bounded context", como una base de datos o una definición de clase de otro "bounded context".
+
+#### Topology
+
+![](img/microservices-architecture-style.png)
+
+El tamaño del servicio en los microservicios es mucho más pequeño que otras arquitecturas distribuidas.
+
+Los arquitectos esperan que cada servicio incluya todas las partes necesarias para funcionar de forma independiente, incluidas las bases de datos y otros componentes dependientes.
+
+#### Distributed
+
+Los microservicios forman una arquitectura distribuida: cada servicio funciona en su propio proceso, que originalmente implicaba una computadora física pero que rápidamente evolucionó a máquinas y contenedores virtuales.
+
+El rendimiento es a menudo el efecto secundario negativo de la naturaleza distribuida de los microservicios. Las llamadas a la red tardan mucho más que las llamadas de método, y la verificación de seguridad en cada endpoint añade tiempo de procesamiento adicional, lo que requiere que los arquitectos piensen cuidadosamente en las implicaciones de la granularidad al diseñar el sistema.
+
+#### Bounded Context
+
+Cada servicio incluye todo lo necesario para operar dentro de la aplicación, incluyendo clases, otros subcomponentes y esquemas de bases de datos.
+
+ Los microservicios tratan de evitar el acoplamiento, y por lo tanto un arquitecto que construye este estilo de arquitectura prefiere la duplicación al acoplamiento.
+
+Los microservicios llevan al extremo el concepto de una arquitectura dividida por dominios. Cada servicio está destinado a representar un dominio o subdominio; en muchos sentidos, los microservicios son la encarnación física de los conceptos lógicos en DDD.
+
+Algunos requerimientos de diseño:
+* Granularity
+    * Los arquitectos luchan por encontrar la granularidad correcta para los servicios en los microservicios, y a menudo cometen el error de hacer sus servicios demasiado pequeños.
+    * Algunas directrices para encontrar los límites adecuados de nuestros servicios:
+        * Propósito: Cada microservicio debe ser extremadamente cohesivo funcionalmente.
+        * Transacciones: Las entidades que necesitan cooperar en una transacción muestran un límite de servicio.
+        * Coreografía: Si un servicio requiere una amplia comunicación para funcionar, hay que agrupar.
+* Data isolation
+    * Muchos otros estilos de arquitectura utilizan una única base de datos para la persistencia. Sin embargo, los microservicios tratan de evitar todo tipo de acoplamiento, incluyendo esquemas compartidos y bases de datos utilizadas como puntos de integración.
+    * Dado que los equipos no se ven obligados a unificarse en torno a una sola base de datos, cada servicio puede elegir la herramienta más adecuada, en función del precio, el tipo de almacenamiento o una serie de otros factores.
+
+#### API Layer
+
+La API layer se encuentre entre los consumidores del sistema. 
+
+Es común porque ofrece una buena ubicación dentro de la arquitectura para realizar tareas útiles, ya sea por vía indirecta como un proxy o un enlace a operational facilities, como un naming service.
+
+No debería usarse como mediador o herramienta de orquestación. Toda la lógica en esta arquitectura debería ocurrir dentro de los bounded context.
+
+#### Operational Reuse
+
+Dado que los microservicios prefieren la duplicación al acoplamiento, ¿cómo manejan los arquitectos las partes de la arquitectura que realmente se benefician del acoplamiento, como las operational concerns como monitoring, logging y los circuit breakers? El **patrón sidecar** es la solución a esto.
+
+![](img/sidecar-pattern.png)
+
+El sidecar component maneja todas las operational concerns. Así pues, cuando llega el momento de actualizar la herramienta de monitoring, el equipo de infraestructura compartida puede actualizar el sidecar, y cada microservicio recibe esa nueva funcionalidad.
+
+Once teams know that each service includes a common sidecar, they can build a **service mesh**, allowing unified control across the architecture for concerns like logging and monitoring. The common sidecar components connect to form a consistent operational interface across all microservices.
+
+![](img/service-plane.png)
+
+Each sidecar wires into the service plane, which forms the consistent interface to each service.
+
+Links: 
+* https://www.aplyca.com/es/blog/service-mesh
+
+#### Frontends
+
+En las arquitecturas de microservicios suelen aparecer dos estilos de interfaces de usuario:
+* monolithic frontend
+* microfrontends
+
+![](img/monolithic-user-interface.png)
+
+![](img/microfrontend.png)
+
+#### Communication
+
+#### Architecture Characteristics Ratings
