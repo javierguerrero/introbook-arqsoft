@@ -811,4 +811,32 @@ En las arquitecturas de microservicios suelen aparecer dos estilos de interfaces
 
 #### Communication
 
+Fundamentalmente, los arquitectos deben decidir sobre la comunicación síncrona o asíncrona.
+
+Las arquitecturas de microservicios típicamente utilizan una interoperabilidad heterogénea consciente de los protocolos. 
+* Protocol-aware: Esto significa que los servicios deben saber (o descubrir) qué protocolo utilizar para llamar a otros servicios.
+* Heterogeneous: Debido a que los microservicios son una arquitectura distribuida, cada servicio puede estar escrito en una pila tecnológica diferente.
+* Interoperability: Los servicios comúnmente llaman a otros servicios a través de la red para colaborar y enviar/recibir información
+
+Estilos de comunicación
+* Choreography
+    * Cada servicio llama a otros servicios según sea necesario, sin un mediador central.
+    * Front controller pattern
+* Orchestration
+    * Un arquitecto puede optar por utilizar la orquestación para procesos comerciales complejos
+    * El arquitecto construye un mediador para manejar la complejidad y la coordinación necesaria para el flujo de trabajo de la empresa. 
+
+
+Transacciones y sagas
+* Los arquitectos aspiran a un desacoplamiento extremo en los microservicios, pero a menudo se encuentran con el problema de cómo hacer la coordinación transaccional entre los servicios.
+* El mejor consejo para los arquitectos que quieren hacer transacciones a través de los servicios es: ¡no lo hagas! 
+* Los límites de las transacciones es uno de los indicadores comunes de la granularidad de los servicios.
+* Un patrón transaccional distribuido popularmente en los microservicios es el **patrón saga**
+
+Links
+* https://www.theodo.fr/digital-et-strategie/architectures-event-driven-construisez-des-applications-performantes-et-d%C3%A9coupl%C3%A9es-avec-rabbitmq
+
+
 #### Architecture Characteristics Ratings
+
+![](img/microservices-ratings.png)
