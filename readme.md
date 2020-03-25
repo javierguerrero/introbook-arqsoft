@@ -241,6 +241,13 @@ Las característias de la arquitectura se pueden clasificar en las siguientes ca
     * Supportability
     * Usability/achievability
 
+Agility: la capacidad de responder rápidamente al cambio
+Deployability: facilidad, frecuencia y riesgo de despliegue.
+
+
+
+
+
 ![](img/development-operations-teams.jpeg)
 
 
@@ -728,6 +735,37 @@ Aplicaciones empresariales
 
 <div align="right"><small><a href="#tabla-de-contenido">volver al inicio</a></small></div>
 
+### Chapter 13. Service-Based Architecture Style 
+
+URL: https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch13.html
+
+La arquitectura basada en servicios es un híbrido del estilo de arquitectura de microservicios y se considera uno de los estilos arquitectónicos más pragmáticos, principalmente debido a su flexibilidad arquitectónica. Aunque la arquitectura basada en servicios es una arquitectura distribuida, no tiene el mismo nivel de complejidad y costo que otras arquitecturas distribuidas, como la de microservicios o la arquitectura basada en eventos, lo que la convierte en una opción muy popular para muchas aplicaciones relacionadas con los negocios.
+
+#### Topology
+
+Consiste en una interfaz de usuario desplegada por separado, servicios remotos desplegados por separador y una base de datos monolítica.
+
+Un aspecto importante de la arquitectura basada en servicios es que suele utilizar una base de datos compartida centralmente
+
+#### Topology Variants
+
+La topología de esta arquitectura puede tener las siguientes variantes:
+* User interface variants
+* Database variants
+* Adding an API layer between the user interface and domain services
+
+#### Service Design and Granularity
+
+* Cada servicio de dominio suele estar diseñado utilizando un estilo de arquitectura en capas que consiste en una capa de fachada API, una capa de negocio y una capa de persistencia.
+* La arquitectura basada en servicios preserva las transacciones ACID mejor que cualquier otra arquitectura distribuida debido a la naturaleza de grano grueso de los servicios de dominio
+* En la mayoría de los casos la transacción se realiza en un servicio de dominio determinado, lo que permite la funcionalidad tradicional de transacción de commit y rollback que se encuentra en la mayoría de las aplicaciones monolíticas.
+
+#### Database Partitioning
+
+Aunque no es necesario, los servicios de una arquitectura basada en servicios suelen compartir una base de datos única y monolítica debido al reducido número de servicios (de 4 a 12) en un contexto de aplicación determinado.
+
+#### Architecture Characteristics Ratings
+
 
 ### Chapter 17. Microservices Architecture
 
@@ -825,6 +863,8 @@ Estilos de comunicación
 * Orchestration
     * Un arquitecto puede optar por utilizar la orquestación para procesos comerciales complejos
     * El arquitecto construye un mediador para manejar la complejidad y la coordinación necesaria para el flujo de trabajo de la empresa. 
+
+Tanto la orquestación como la coreografía son necesarias cuando se deben coordinar múltiples servicios para completar una determinada transacción comercial. La orquestación es la coordinación de múltiples servicios a través del uso de un servicio mediador separado que controla y gestiona el flujo de trabajo de la transacción (como un director de orquesta). La coreografía, en cambio, es la coordinación de múltiples servicios mediante la cual cada servicio habla con los demás sin el uso de un mediador central (como los bailarines en una danza). A medida que los servicios se vuelven más finos, tanto la orquestación como la coreografía son necesarias para unir los servicios para completar la transacción comercial. 
 
 
 Transacciones y sagas
